@@ -1,11 +1,9 @@
 const cors = require('cors')
 const express = require('express')
 const app = express()
-const server = app.listen(3000)
+const server = app.use(cors()).listen(3000)
 
-server.use(cors())
-
-const io = require('socket.io').listen(server)
+const io = require('socket.io')(server)
 const fs = require('fs')
 
 
