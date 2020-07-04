@@ -13,7 +13,7 @@ app.use(function(req, res, next) {
 
 const http = require('https')
 const server = http.createServer(app)
-const io = require('socket.io').listen(server)
+const io = require('socket.io').listen(server, { log: false, origins: '*:*' })
 const fs = require('fs')
 
 
