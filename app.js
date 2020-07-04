@@ -1,7 +1,10 @@
 const cors = require('cors')
 const express = require('express')
 const app = express()
-app.use(cors())
+
+app.use(cors({
+  origin: 'https://simplechatroom-v1.web.app/'
+}))
 
 const server = app.listen(3000)
 const io = require('socket.io').listen(server)
