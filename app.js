@@ -11,7 +11,10 @@ io.on('connection', (socket) => {
   console.log(`${socket.id} is online`)
 
   socket.broadcast.emit('connection init', {
-    msg: `user with ${socket.id} is online`
+    msg: {
+      title: 'Announcement',
+      content: `user with ${socket.id} is online`
+    }
   })
 
   socket.on('fetch dummy avatar', () => {
@@ -41,20 +44,29 @@ io.on('connection', (socket) => {
       avatar.id = socket.id
       
       socket.emit('into chatroom', {
-        msg: 'You join chat',
+        msg: {
+          title: 'Announcement',
+          content: 'You join chat, have fun!'
+        },
         onlineUsers: onlineClients,
         messages,
         avatar
       })
       socket.broadcast.emit('others into chatroom', {
-        msg: `user ${socket.id} enter as ${user.name}`,
+        msg: {
+          title: 'Announcement',
+          content: `user ${socket.id} enter as ${user.name}`
+        },
         onlineUsers: onlineClients,
         messages
       })
     }
     else {
       socket.emit('avatar not available', {
-        msg: `others still use ${avatar.name} as their avatar`
+        msg: {
+          title: 'Warning',
+          content: `others still use ${avatar.name} as their avatar`
+        }
       })
     }
   })
@@ -91,7 +103,10 @@ io.on('connection', (socket) => {
     })
 
     socket.broadcast.emit('a user disconnect', {
-      msg: `user with ${socket.id} disconnected`,
+      msg: {
+        title: 'Warning',
+        content: `user with ${socket.id} disconnected`
+      },
       id: socket.id,
       messages
     })
