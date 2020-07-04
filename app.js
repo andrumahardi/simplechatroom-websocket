@@ -13,8 +13,10 @@ app.use(function(req, res, next) {
 
 const http = require('https')
 const server = http.createServer(app)
-const io = require('socket.io').listen(server, { log: false, origins: '*:*' })
+const io = require('socket.io').listen(server)
 const fs = require('fs')
+
+io.origins('*:*')
 
 
 let messages = []
