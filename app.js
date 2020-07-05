@@ -3,15 +3,13 @@ const socketio = require('socket.io')
 const http = require('http')
 const cors = require('cors')
 
-const port = 3000
-
 const app = express()
 const router = require('./router')
 
 app.use(cors())
 app.use(router)
 
-const server = app.listen(port)
+const server = app.listen(5000)
 const io = socketio(server)
 const fs = require('fs')
 
