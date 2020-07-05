@@ -1,5 +1,5 @@
-const cors = require('cors')
-const server = require('http').createServer()
+const app = require('express')()
+const server = app.listen(3000)
 const io = require('socket.io')(server)
 const fs = require('fs')
 
@@ -113,8 +113,4 @@ io.on('connection', (socket) => {
     })
     console.log(`${socket.id} is disconnected`)
   })
-})
-
-server.listen(3000, () => {
-  console.log('listen 3000')
 })
