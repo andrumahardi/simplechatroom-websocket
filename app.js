@@ -6,14 +6,15 @@ const cors = require('cors')
 const port = 3000
 
 const app = express()
-const server = http.createServer(app)
-const io = socketio(server)
-const fs = require('fs')
-
 const router = require('./router')
 
 app.use(cors())
 app.use(router)
+
+const server = http.createServer(app)
+const io = socketio(server)
+const fs = require('fs')
+
 
 let messages = []
 let onlineClients = []
