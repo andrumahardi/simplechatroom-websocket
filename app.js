@@ -1,8 +1,7 @@
 // const server = require('http').createServer()
-const io = require('socket.io')(3000, {
-  origins: '*',
-  serveClient: true
-})
+const io = require('socket.io')()
+
+io.origins(['https://simplechatroom-v1.web.app/'])
 const fs = require('fs')
 
 let messages = []
@@ -117,4 +116,4 @@ io.on('connection', (socket) => {
   })
 })
 
-server.listen(3000)
+// server.listen(3000)
