@@ -1,8 +1,8 @@
 const cors = require('cors')
 const app = require('express')()
 const server = require('http').createServer(app)
-server.use(cors())
 const io = require('socket.io')(server)
+io.use(cors())
 const fs = require('fs')
 
 let messages = []
