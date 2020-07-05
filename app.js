@@ -10,6 +10,7 @@ const io = socketio(server)
 const fs = require('fs')
 
 app.use(cors())
+app.get('/', (_, res) => res.send('Connect'))
 
 let messages = []
 let onlineClients = []
