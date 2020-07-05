@@ -10,7 +10,6 @@ app.use(router)
 
 const server = app.listen(process.env.PORT || 3000)
 const io = socketio(server)
-const fs = require('fs')
 
 let messages = []
 let onlineClients = []
@@ -24,13 +23,6 @@ io.on('connection', (socket) => {
       title: 'Announcement',
       content: `user with ${socket.id} is online`
     }
-  })
-
-  socket.on('fetch dummy avatar', () => {
-    fs.readFile('dummy.json', (_, res) => {
-      const { avatars } = JSON.parse(res)
-      socket.emit('transport dummy avatar', avatars)
-    })
   })
 
   socket.on('go to chatroom', ({ avatar }) => {
