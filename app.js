@@ -1,11 +1,18 @@
-const app = require('express')()
-const server = app.listen(3000)
-const io = require('socket.io')(server)
+const express = require('express')
+const socketio = require('socket.io')
+const http = require('http')
+const cors = require('cors')
+const port = 3000
+
+const app = express()
+const server = http.createServer(app)
+const io = socketio(server)
 const fs = require('fs')
+
+app.use(cors())
 
 let messages = []
 let onlineClients = []
-
 
 io.on('connection', (socket) => {
 
@@ -114,3 +121,5 @@ io.on('connection', (socket) => {
     console.log(`${socket.id} is disconnected`)
   })
 })
+
+server.listen(port)
