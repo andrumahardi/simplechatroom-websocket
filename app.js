@@ -1,6 +1,6 @@
 const server = require('http').createServer((_, res) => {
   res.writeHead(200, {
-    'Access-Control-Allow-Origin' : 'https://simplechatroom-v1.web.app'
+    'Access-Control-Allow-Origin' : '*'
   })
 })
 const io = require('socket.io')(server)
