@@ -1,23 +1,17 @@
-const app = require('express')()
 const cors = require('cors')
+const app = require('express')()
+const server = require('https').createServer(app)
+const io = require('socket.io')(server)
+const fs = require('fs')
 
-
-app.use(cors())
-app.use(function(req, res, next) {
+server.use(cors())
+server.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   res.header("Access-Control-Allow-Headers", "Content-Type");
   res.header("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS");
   next();
 })
-
-const http = require('https')
-const server = http.createServer(app)
-const io = require('socket.io').listen(server)
-const fs = require('fs')
-
-io.origins('*:*')
-
 
 let messages = []
 let onlineClients = []
@@ -129,3 +123,5 @@ io.on('connection', (socket) => {
     console.log(`${socket.id} is disconnected`)
   })
 })
+
+server.listen(3000)
