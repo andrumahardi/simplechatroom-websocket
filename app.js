@@ -11,7 +11,7 @@ const router = require('./router')
 app.use(cors())
 app.use(router)
 
-const server = http.createServer(app)
+const server = app.listen(port)
 const io = socketio(server)
 const fs = require('fs')
 
@@ -126,5 +126,3 @@ io.on('connection', (socket) => {
     console.log(`${socket.id} is disconnected`)
   })
 })
-
-server.listen(port)
