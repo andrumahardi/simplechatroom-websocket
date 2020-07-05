@@ -1,8 +1,4 @@
-const server = require('http').createServer((_, res) => {
-  res.writeHead(200, {
-    'Access-Control-Allow-Origin' : '*'
-  })
-})
+const server = require('http').createServer()
 const io = require('socket.io')(server)
 const fs = require('fs')
 

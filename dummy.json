@@ -2,25 +2,32 @@
   "avatars": 
   [
     {
-      "name":"Giaccherini Acuto"
+      "name":"Giaccherini Acuto",
+      "profile":"https://icons.iconarchive.com/icons/martin-berube/people/256/artist-icon.png"
     },
     {
-      "name":"Walking Bison"
+      "name":"Walking Bison",
+      "profile":"https://icons.iconarchive.com/icons/martin-berube/people/256/Indian-icon.png"
     },
     {
-      "name":"Princess Agnes"
+      "name":"Princess Agnes",
+      "profile":"https://icons.iconarchive.com/icons/martin-berube/people/256/princess-icon.png"
     },
     {
-      "name":"Daisy Hallway"
+      "name":"Daisy Hallway",
+      "profile":"https://icons.iconarchive.com/icons/martin-berube/people/256/nurse-icon.png"
     },
     {
-      "name":"Konungr‎ Wulfgang"
+      "name":"Konungr‎ Wulfgang",
+      "profile":"https://icons.iconarchive.com/icons/martin-berube/people/256/king-icon.png"
     },
     {
-      "name":"Dróttinn Freydis"
+      "name":"Dróttinn Freydis",
+      "profile":"https://icons.iconarchive.com/icons/martin-berube/people/256/queen-icon.png"
     },
     {
-      "name":"Martin Gunnar"
+      "name":"Martin Gunnar",
+      "profile":"https://icons.iconarchive.com/icons/martin-berube/people/256/soldier-icon.png"
     }
   ]
 }
