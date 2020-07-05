@@ -2,8 +2,6 @@ const express = require('express')
 const socketio = require('socket.io')
 const http = require('http')
 const cors = require('cors')
-const PORT = process.env.PORT || 3000
-
 
 const app = express()
 const router = require('./router')
@@ -11,7 +9,7 @@ const router = require('./router')
 app.use(cors())
 app.use(router)
 
-app.listen(PORT)
+app.listen(process.env.PORT || 3000)
 
 // const server = app.listen(5000)
 // const io = socketio(server)
