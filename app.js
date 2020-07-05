@@ -1,8 +1,7 @@
+const cors = require('cors')
 const server = require('http').createServer()
 const io = require('socket.io')(server)
 const fs = require('fs')
-
-io.origins("*:*")
 
 let messages = []
 let onlineClients = []
