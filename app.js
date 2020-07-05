@@ -12,7 +12,6 @@ const server = app.listen(process.env.PORT || 3000)
 const io = socketio(server)
 const fs = require('fs')
 
-
 let messages = []
 let onlineClients = []
 
