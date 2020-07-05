@@ -2,6 +2,7 @@ const express = require('express')
 const socketio = require('socket.io')
 const http = require('http')
 const cors = require('cors')
+
 const port = 3000
 
 const app = express()
@@ -9,8 +10,10 @@ const server = http.createServer(app)
 const io = socketio(server)
 const fs = require('fs')
 
+const router = require('./router')
+
 app.use(cors())
-app.get('/', (_, res) => res.send('Connect'))
+app.use(router)
 
 let messages = []
 let onlineClients = []
