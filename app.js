@@ -1,5 +1,8 @@
-const server = require('http').createServer()
-const io = require('socket.io')(server)
+// const server = require('http').createServer()
+const io = require('socket.io')(3000, {
+  origins: '*',
+  serveClient: true
+})
 const fs = require('fs')
 
 let messages = []
